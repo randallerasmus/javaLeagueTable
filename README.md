@@ -39,19 +39,18 @@ please keep this in mind. Please use platform-agnostic constructs where possible
 and file-path-separators are two problematic areas).
 
 Sample input:
-_________________________________
-| Lions 3, Snakes 3             |  
-| Tarantulas 1, FC Awesome 0    |
-| Lions 1, FC Awesome 1         |
-|Tarantulas 3, Snakes 1         |
-| Lions 4, Grouches 0           |
-|_______________________________|
+
+Lions 3, Snakes 3               
+Tarantulas 1, FC Awesome 0    
+Lions 1, FC Awesome 1         
+Tarantulas 3, Snakes 1         
+Lions 4, Grouches 0           
+
 
 Expected output:
-________________________
-| 1. Tarantulas, 6 pts |
-| 2. Lions, 5 pts      |
-| 3. FC Awesome, 1 pt  |
-| 3. Snakes, 1 pt      |
-| 5. Grouches, 0 pts   |
-_______________________|
+
+1. Tarantulas, 6 pts 
+2. Lions, 5 pts      
+3. FC Awesome, 1 pt  
+3. Snakes, 1 pt      
+5. Grouches, 0 pts   

@@ -11,7 +11,6 @@ public class Team {
     private int loss;
     private int result;
 
-
     public Team() {
     }
 

@@ -9,7 +9,8 @@ public class LeagueEntry {
     private int lost;
     private int points;
 
-    public LeagueEntry() {
+    public LeagueEntry(final String teamName) {
+        this.teamName = teamName;
     }
 
     public LeagueEntry(String teamName, int played, int won, int drawn, int lost, int points) {
@@ -45,7 +46,6 @@ public class LeagueEntry {
         return points;
     }
 
-
     public void increaseWon() {
         this.won++;
     }
@@ -60,5 +60,9 @@ public class LeagueEntry {
 
     public void increasePoints(int points) {
         this.points += points;
+    }
+
+    public void increasePlayed() {
+        this.played++;
     }
 }

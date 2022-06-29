@@ -17,25 +17,25 @@ public class LeagueTableTest {
 
         // SAMPLE INPUT
         var matches = Arrays.asList(
-                new Match(TeamTest.LIONS.getName(), TeamTest.SNAKES.getName(),3,3),
-                new Match(TeamTest.TARANTULAS.getName(), TeamTest.FC_AWESOME.getName(),1,0),
-                new Match(TeamTest.LIONS.getName(), TeamTest.FC_AWESOME.getName(),1,1),
-                new Match(TeamTest.TARANTULAS.getName(), TeamTest.SNAKES.getName(),3,1),
-                new Match(TeamTest.LIONS.getName(), TeamTest.GROUCHES.getName(),4,0)
+                new Match(Teams.LIONS.getName(), Teams.SNAKES.getName(),3,3),
+                new Match(Teams.TARANTULAS.getName(), Teams.FC_AWESOME.getName(),1,0),
+                new Match(Teams.LIONS.getName(), Teams.FC_AWESOME.getName(),1,1),
+                new Match(Teams.TARANTULAS.getName(), Teams.SNAKES.getName(),3,1),
+                new Match(Teams.LIONS.getName(), Teams.GROUCHES.getName(),4,0)
         );
 
         // EXPECTED SAMPLE OUTPUT
         var expectedLeagueTable = Arrays.asList(
-                new LeagueEntry(
-                        TeamTest.TARANTULAS.getName(),  2, 2, 0, 0, 6),
-                new LeagueEntry(
-                        TeamTest.LIONS.getName(), 3, 1, 2, 0, 5),
-                new LeagueEntry(
-                        TeamTest.FC_AWESOME.getName(),  2, 0, 1, 1, 1),
-                new LeagueEntry(
-                        TeamTest.SNAKES.getName(), 2, 0, 1, 1, 1),
-                new LeagueEntry(
-                        TeamTest.GROUCHES.getName(),  1, 0, 0, 1, 0)
+                new TeamEntry(
+                        Teams.TARANTULAS.getName(),  2, 2, 0, 0, 6),
+                new TeamEntry(
+                        Teams.LIONS.getName(), 3, 1, 2, 0, 5),
+                new TeamEntry(
+                        Teams.FC_AWESOME.getName(),  2, 0, 1, 1, 1),
+                new TeamEntry(
+                        Teams.SNAKES.getName(), 2, 0, 1, 1, 1),
+                new TeamEntry(
+                        Teams.GROUCHES.getName(),  1, 0, 0, 1, 0)
         );
 
        var leagueTable = new LeagueTable(matches);
@@ -46,7 +46,7 @@ public class LeagueTableTest {
         }
 
     private void assertActualLeagueTableWithExpectedLeagueTable(
-            List<LeagueEntry> expectedLeagueTable, List<LeagueEntry> actualLeagueTable) {
+            List<TeamEntry> expectedLeagueTable, List<TeamEntry> actualLeagueTable) {
 
         if (expectedLeagueTable.size() != actualLeagueTable.size()) {
             fail("The Expected League Table and The Actual League Table have different sizes");
@@ -66,12 +66,12 @@ public class LeagueTableTest {
             }
         }
 
-    private void printTableResultOnConsole(List<LeagueEntry> tableEntries) {
+    private void printTableResultOnConsole(List<TeamEntry> tableEntries) {
 
         System.out.printf("%8s %-20s %9s %5s %7s %6s %8s\n",
                 "Position", "\tClub", "Played", "Won", "Drawn", "Lost", "Points");
         for (var i = 0; i < tableEntries.size(); i++) {
-            LeagueEntry tableEntry = tableEntries.get(i);
+            TeamEntry tableEntry = tableEntries.get(i);
 
             System.out.printf("%-8d \t%-20s %6d %6d %6d %6d %6d\n",
                     (i + 1),

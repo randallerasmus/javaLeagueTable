@@ -1,6 +1,6 @@
 package com.company;
 
-public class LeagueEntry {
+public class TeamEntry {
 
     private String teamName;
     private int played;
@@ -9,11 +9,11 @@ public class LeagueEntry {
     private int lost;
     private int points;
 
-    public LeagueEntry(final String teamName) {
+    public TeamEntry(final String teamName) {
         this.teamName = teamName;
     }
 
-    public LeagueEntry(String teamName, int played, int won, int drawn, int lost, int points) {
+    public TeamEntry(String teamName, int played, int won, int drawn, int lost, int points) {
         this.teamName = teamName;
         this.played = played;
         this.won = won;

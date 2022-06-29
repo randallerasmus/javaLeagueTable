@@ -1,6 +1,6 @@
 package com.company;
 
-public enum TeamTest {
+public enum Teams {
 
     LIONS("Lions"),
     SNAKES("Snakes"),
@@ -10,7 +10,7 @@ public enum TeamTest {
 
     private String name;
 
-    TeamTest(String name) {
+    Teams(String name) {
         this.name = name;
     }
 

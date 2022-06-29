@@ -18,7 +18,7 @@ public class LeagueTable {
         this.matches = matches;
     }
 
-    private void computeMatchResult(Match match, LeagueEntry homeTeam, LeagueEntry awayTeam){
+    private void computeMatchResult(Match match, TeamEntry homeTeam, TeamEntry awayTeam){
         if (match.getHomeScore() > match.getAwayScore()) {
             homeTeam.increaseWon();
             homeTeam.increasePoints(WIN_RESULT);
@@ -35,8 +35,8 @@ public class LeagueTable {
         }
     }
 
-    public List<LeagueEntry> getLeagueEntries() {
-        Map<String, LeagueEntry> leagueTableEntries = new HashMap<>();
+    public List<TeamEntry> getLeagueEntries() {
+        Map<String, TeamEntry> leagueTableEntries = new HashMap<>();
 
         matches.forEach(match -> {
             var homeTeam = getOrCreateMatches(leagueTableEntries, match.getHomeTeam());
@@ -48,17 +48,17 @@ public class LeagueTable {
         });
 
         return leagueTableEntries.values().stream()
-                .sorted(Comparator.comparing(LeagueEntry::getPoints).reversed()
-                       .thenComparing(LeagueEntry::getTeamName)).collect(Collectors.toList());
+                .sorted(Comparator.comparing(TeamEntry::getPoints).reversed()
+                       .thenComparing(TeamEntry::getTeamName)).collect(Collectors.toList());
     }
 
-    private LeagueEntry getOrCreateMatches(Map<String, LeagueEntry> leagueTableEntries, String teamName) {
+    private TeamEntry getOrCreateMatches(Map<String, TeamEntry> leagueTableEntries, String teamName) {
         var leagueEntry = leagueTableEntries.get(teamName);
         if (leagueEntry != null) {
             return leagueEntry;
         }
 
-        leagueTableEntries.put(teamName, new LeagueEntry(teamName));
+        leagueTableEntries.put(teamName, new TeamEntry(teamName));
         return leagueTableEntries.get(teamName);
     }
 }

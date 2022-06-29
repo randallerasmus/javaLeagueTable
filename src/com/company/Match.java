@@ -2,10 +2,10 @@ package com.company;
 
 public class Match {
 
-    private String homeTeam;
-    private String awayTeam;
-    private int homeScore;
-    private int awayScore;
+    private final String homeTeam;
+    private final String awayTeam;
+    private final int homeScore;
+    private final int awayScore;
 
     public Match(String homeTeam, String awayTeam, int homeScore, int awayScore) {
         this.homeTeam = homeTeam;
